@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คู่มือติดฟิล์มกระจกบน Mineral Glass · ฉบับมือสมัครเล่น</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#171614; --paper:#f6f3ed; --card:#fffdf9; --line:#e3ddcf;
+  --teal:#0e5b57; --teal-2:#137a74; --teal-soft:#e8f0ee;
+  --amber:#b0722a; --amber-soft:#f7eddd;
+  --red:#9e3a2b; --red-soft:#f8e8e3;
+  --muted:#6d675a;
+  --shadow:0 1px 2px rgba(23,22,20,.04),0 8px 24px -12px rgba(23,22,20,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'IBM Plex Sans Thai','Noto Sans Thai',-apple-system,'Segoe UI',sans-serif;
+  font-size:15.5px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header{
+  background:linear-gradient(160deg,#123f3c 0%,#0e5b57 55%,#14706a 100%);
+  color:#f4f1e8; padding:56px 0 44px; position:relative; overflow:hidden;
+}
+header:after{
+  content:""; position:absolute; right:-120px; top:-120px; width:460px; height:460px;
+  border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.09),transparent 65%);
+}
+header .wrap{position:relative;z-index:1}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#a8d5cf;font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(25px,4vw,40px);line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:-.005em}
+h1 .sub{display:block;font-size:.55em;font-weight:400;color:#bfe0db;margin-top:12px;line-height:1.7}
+.lede{max-width:780px;color:#d9e8e5;font-size:15.5px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:5px 14px;font-size:12.5px;color:#e3efec}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+nav.toc a{color:#cfe5e1;text-decoration:none;font-size:12.5px;border-bottom:1px dotted rgba(255,255,255,.35);padding-bottom:1px}
+nav.toc a:hover{color:#fff}
+
+section{padding:52px 0 8px;scroll-margin-top:64px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px}
+.sec-num{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.16em}
+h2{font-size:clamp(20px,2.6vw,26px);margin:0;font-weight:700;line-height:1.5}
+h3{font-size:17.5px;margin:32px 0 10px;font-weight:700}
+h4{font-size:15.5px;margin:0 0 6px;font-weight:600}
+p{margin:0 0 14px}
+.small{font-size:13px;color:var(--muted);line-height:1.75}
+.lead{font-size:16px;color:#3a372f}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+.card .tag{display:inline-block;font-size:11px;letter-spacing:.08em;font-weight:700;color:var(--teal);background:var(--teal-soft);padding:3px 9px;border-radius:5px;margin-bottom:12px}
+.card p{font-size:14.2px;color:#413d35;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+
+.callout{border-left:3px solid var(--teal);background:var(--teal-soft);border-radius:0 10px 10px 0;padding:16px 20px;margin:20px 0;font-size:14.5px}
+.callout.warn{border-color:var(--red);background:var(--red-soft)}
+.callout.amber{border-color:var(--amber);background:var(--amber-soft)}
+.callout b{color:var(--ink)}
+
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:580px}
+#shop{min-width:760px}
+th,td{text-align:left;padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:#f1ede3;font-size:12px;letter-spacing:.04em;color:#4a463c;font-weight:700;white-space:nowrap;word-break:keep-all}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#faf7f0}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.strong{font-weight:600}
+.map-tbl td:first-child{width:20%}
+.map-tbl td:nth-child(2){color:var(--muted);font-size:13px}
+.map-tbl td:nth-child(3){background:#f7fbf9}
+
+.tier{position:relative;overflow:hidden}
+.tier .price{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.tier ul{margin:12px 0 0;padding-left:18px;font-size:13.5px;color:#413d35}
+.tier li{margin-bottom:4px}
+.tier.reco{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal),var(--shadow)}
+.reco-flag{position:absolute;top:0;right:0;background:var(--teal);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:0 13px 0 10px}
+
+.list-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:inherit;transition:.15s}
+.btn:hover{border-color:var(--teal);color:var(--teal)}
+.btn.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.pill{font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap;display:inline-block}
+.p-must{background:#0e5b57;color:#fff}
+.p-reco{background:#e8f0ee;color:#0e5b57;border:1px solid #b7d3ce}
+.p-up{background:#f7eddd;color:#8a5a1f;border:1px solid #e2c79b}
+.p-no{background:#f1ede3;color:#7a7364;border:1px solid #ddd6c6}
+.check{width:17px;height:17px;accent-color:#0e5b57;cursor:pointer;margin:0}
+tr.picked{background:#f4faf8}
+tr.picked td{color:#4b6f6b}
+tr.picked .strong{color:#0e5b57}
+
+.totalbar{
+  position:sticky;top:0;z-index:20;background:rgba(23,22,20,.96);color:#f4f1e8;
+  backdrop-filter:blur(8px);border-radius:10px;padding:11px 18px;margin:0 0 12px;
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:13.5px;
+  box-shadow:0 6px 18px -10px rgba(0,0,0,.5);
+}
+.totalbar .amt{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;color:#9fd8d1}
+.totalbar .cnt{color:#b8b2a4}
+
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps>li{counter-increment:s;position:relative;padding:0 0 22px 52px;border-left:1px solid var(--line);margin-left:15px}
+.steps>li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps>li:before{
+  content:counter(s);position:absolute;left:-15px;top:-2px;width:30px;height:30px;border-radius:50%;
+  background:var(--card);border:1.5px solid var(--teal);color:var(--teal);font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps p{font-size:14.2px;margin-bottom:6px;color:#413d35}
+.why{font-size:12.8px;color:var(--teal);background:var(--teal-soft);display:inline-block;padding:4px 10px;border-radius:6px;line-height:1.75}
+
+footer{padding:44px 0 70px;color:var(--muted);font-size:12.5px;line-height:1.9}
+.src{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:22px}
+
+@media (max-width:860px){
+  .g3,.g2{grid-template-columns:1fr}
+  .wrap{padding:0 18px}
+  header{padding:40px 0 32px}
+  section{padding:38px 0 6px}
+  .hide-sm{display:none}
+}
+@media print{
+  body{background:#fff}
+  header{background:#0e5b57 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .totalbar{position:static}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Technical Procurement Brief · ตุลาคม 2026</div>
+    <h1>ติดฟิล์มกระจกบน Mineral Glass ให้ได้ผลระดับห้องแล็บ
+      <span class="sub">ด้วยงบประมาณของมือสมัครเล่น — แยกให้ชัดว่าอะไรต้องซื้อ อะไรใช้ของทดแทนได้ อะไรซื้อไปก็เสียเงินเปล่า</span>
+    </h1>
+    <p class="lede">จากหลักการฟิสิกส์เคมีพื้นผิว 4 ข้อในบทความ (การเตรียมพื้นผิว · การจับคู่ดัชนีหักเห · การกดให้สม่ำเสมอ · การควบคุมสภาพแวดล้อม) แปลงออกมาเป็นรายการจัดซื้อ 16 รายการ แผนงบ 3 ระดับ และ SOP 12 ขั้นตอนที่ทำตามได้ทันที</p>
+    <div class="meta">
+      <span class="chip">3 ระดับงบ · ฿900 – ฿5,600</span>
+      <span class="chip">16 รายการ พร้อมคีย์เวิร์ดค้นหา</span>
+      <span class="chip">SOP 12 ขั้นตอน</span>
+      <span class="chip">ราคาประเมินจาก e-commerce ไทย</span>
+    </div>
+    <nav class="toc">
+      <a href="#analysis">① แกะบทความ</a>
+      <a href="#mapping">② หลักการ → อุปกรณ์</a>
+      <a href="#budget">③ สามระดับงบ</a>
+      <a href="#list">④ รายการจัดซื้อ</a>
+      <a href="#film">⑤ เลือกฟิล์ม</a>
+      <a href="#sop">⑥ SOP 12 ขั้น</a>
+      <a href="#avoid">⑦ ของที่ไม่ต้องซื้อ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ===== 01 ===== -->
+<section id="analysis">
+  <div class="sec-head"><span class="sec-num">01</span><h2>แกะบทความ: จริง ๆ แล้วมันต้องการอะไร</h2></div>
+
+  <p class="lead">บทความนี้เขียนได้ดีมาก แต่สิ่งที่มันอธิบายคือกระบวนการ <strong>optical bonding</strong> สำหรับงานอุตสาหกรรม ไม่ใช่การติดฟิล์มแบบผู้บริโภค หลักการทั้งสี่ข้อถูกต้องทั้งหมด ปัญหาอยู่ที่เครื่องมือที่บทความแนะนำเป็นอุปกรณ์ระดับโรงงาน งานจริงของเราจึงเป็นแค่ <strong>เก็บหลักการไว้ เปลี่ยนเครื่องมือ</strong></p>
+
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card">
+      <span class="tag">หลักการ 01</span>
+      <h4>การเตรียมพื้นผิวระดับนาโน</h4>
+      <p>ซีบัม (sebum) จากผิวหนังเป็นสารพลังงานพื้นผิวต่ำ ทำตัวเป็นชั้นกั้นไม่ให้กาวสัมผัสกระจกโดยตรง ต้องใช้ IPA 99% ละลายและพาออกไป เพราะระเหยเร็วและไม่ทิ้งคราบ</p>
+      <p>พร้อมกันนั้นต้องกำจัดประจุไฟฟ้าสถิต เพราะผิวที่มีประจุจะดูดฝุ่นในอากาศเข้าชั้นกาวเอง</p>
+      <p class="small">→ มือสมัครเล่นทำได้ครบ ต้นทุนต่ำมาก</p>
+    </div>
+    <div class="card">
+      <span class="tag">หลักการ 02</span>
+      <h4>การจับคู่ดัชนีหักเหและชั้นกาว OCA</h4>
+      <p>ช่องอากาศเล็ก ๆ ระหว่างกระจกสองชั้นทำให้เกิดการสะท้อนที่รอยต่อ และเกิดนิวตันริง (แถบสีรุ้ง) กาวต้องมีดัชนีหักเหใกล้กระจก (ประมาณ 1.5)</p>
+      <p>ตอนติดต้องปล่อยให้กาว "เปียกแผ่" (wetting out) เอง <strong>ห้ามกดกลางแผ่นทันที</strong> เพราะจะกักอากาศไว้ตรงกลาง</p>
+      <p class="small">→ มือสมัครเล่นทำ OCA เองไม่ได้ ทำได้แค่ "เลือกฟิล์มให้ถูก"</p>
+    </div>
+    <div class="card">
+      <span class="tag">หลักการ 03</span>
+      <h4>การกดให้สม่ำเสมอและแรงเค้นตกค้าง</h4>
+      <p>รีดทิศทางเดียวจากกลางออกขอบ กระจกมิเนอรัลแข็งประมาณโมส์ 6–7 ส่วนฟิล์มเองก็มีแรงเค้นอยู่แล้ว ถ้าขอบถูกกดเป็นจุดจะเกิดการรวมแรงเค้น (stress concentration) ทำให้บิ่นหรืองัดง่ายเมื่อโดนกระแทก</p>
+      <p class="small">→ อาศัยฝีมือ ไม่ใช่อุปกรณ์</p>
+    </div>
+    <div class="card">
+      <span class="tag">หลักการ 04</span>
+      <h4>การควบคุมสภาพแวดล้อม</h4>
+      <p>อุณหภูมิ 22–25 °C ความชื้นสัมพัทธ์ต่ำ กระจกที่เย็นจะทำให้ไอน้ำในอากาศควบแน่นบนผิว ซึ่งลดแรงยึดเกาะเริ่มต้นของกาว PSA โดยตรง</p>
+      <p class="small">→ ห้องนอนที่เปิดแอร์ก็เพียงพอ</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>ข้อสรุปสำคัญ:</b> ในสี่หลักการ มีเพียงข้อ 1 และ 3 ที่พึ่ง "อุปกรณ์" จริง ๆ ข้อ 2 พึ่ง "การเลือกสินค้า" และข้อ 4 พึ่ง "สภาพแวดล้อม" แปลว่าเงินควรลงที่<strong>วัสดุสิ้นเปลืองและการเลือกฟิล์ม ไม่ใช่ที่เครื่องมือ</strong> ปืนลมไอออนราคา ฿2,000 ให้ผลตอบแทนส่วนเพิ่มน้อยกว่าการซื้อฟิล์มเพิ่มสองแผ่นบวกผ้าไร้ขุยดี ๆ หนึ่งผืนอย่างชัดเจน
+  </div>
+
+  <h3>สาเหตุที่ล้มเหลวจริง (ในบริบทมือสมัครเล่น)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>อาการที่เจอ</th><th>สาเหตุจริง</th><th>สัดส่วนโดยประมาณ</th><th>หลักการในบทความ</th></tr></thead>
+      <tbody>
+        <tr><td class="strong">ฝุ่นเม็ดเดียวใต้ฟิล์ม → ดันเป็นฟอง</td><td>ควบคุมฝุ่นล้มเหลว (สภาพแวดล้อม + ไฟฟ้าสถิต + ขั้นตอนสุดท้าย)</td><td>ประมาณ 60–70%</td><td>ข้อ 1 / 4</td></tr>
+        <tr><td class="strong">ฟองกลางแผ่นใหญ่ ขอบลอย</td><td>ซื้อฟิล์ม "กาวเฉพาะขอบ" ซึ่งตรงกลางไม่มีกาวตั้งแต่แรก</td><td>ประมาณ 15%</td><td>ข้อ 2</td></tr>
+        <tr><td class="strong">ขอบเป็นแถบสีรุ้ง</td><td>กระจกเป็นผิวโค้ง (domed) ฟิล์มแบนตามขอบไม่ได้</td><td>ประมาณ 10%</td><td>ข้อ 2</td></tr>
+        <tr><td class="strong">ขนาดคลาดเคลื่อน บังขีดบอกเวลา หรือชนตัวเรือน</td><td>ซื้อตามรุ่นนาฬิกา ไม่ได้วัดเส้นผ่านศูนย์กลางเป็นมิลลิเมตร</td><td>ประมาณ 8%</td><td>—</td></tr>
+        <tr><td class="strong">ติดแล้วสองสามวันหลุดเอง</td><td>ล้างไขมันไม่หมด / เย็นและชื้น ทำให้แรงยึดเริ่มต้นต่ำ</td><td>ประมาณ 5%</td><td>ข้อ 1 / 4</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small" style="margin-top:10px">สรุป: ลำดับความสำคัญของงบคือ <strong>การควบคุมฝุ่น</strong> และ <strong>การเลือกฟิล์มให้ถูก</strong> ไม่ใช่การซื้อเครื่องมือแพง</p>
+</section>
+
+<!-- ===== 02 ===== -->
+<section id="mapping">
+  <div class="sec-head"><span class="sec-num">02</span><h2>หลักการ → อุปกรณ์: อะไรควรจ่าย อะไรประหยัดได้</h2></div>
+
+  <p>ตารางนี้คือหัวใจของรายงาน คอลัมน์แรกคือสิ่งที่บทความกำหนด คอลัมน์กลางคือทางออกระดับโรงงาน คอลัมน์ขวาคือของทดแทนสำหรับมือสมัครเล่น พร้อมบอกว่ามัน "เทียบเท่า" จริงหรือไม่</p>
+
+  <div class="tbl-wrap">
+    <table class="map-tbl">
+      <thead><tr><th>หลักการในบทความ</th><th>ทางออกระดับโรงงาน</th><th>ของทดแทนสำหรับมือสมัครเล่น</th><th>ความเทียบเท่า</th><th>ต้นทุน</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="strong">ขจัดไขมัน (ชั้นกั้นพลังงานพื้นผิวต่ำ)</td>
+          <td>IPA 99% + ผ้าไร้ขุย เช็ดทิศทางเดียว</td>
+          <td><b>ลอกมาใช้ทั้งหมด</b> IPA 99% + ผ้าระดับ cleanroom นี่คือรายการเดียวที่ไม่ควรประหยัด</td>
+          <td>100%</td><td class="num">฿300</td>
+        </tr>
+        <tr>
+          <td class="strong">กำจัดไฟฟ้าสถิต</td>
+          <td>ปืนลมไอออน (ionizing air gun)</td>
+          <td>ลูกยางเป่าลม + แปรงกันไฟฟ้าสถิต + <b>ควบคุมความชื้นห้องให้นิ่ง</b> หลักการไม่เท่ากัน แต่ลดอัตราฝุ่นได้ 70–80%</td>
+          <td>≈75%</td><td class="num">฿250</td>
+        </tr>
+        <tr>
+          <td class="strong">จับคู่ดัชนีหักเห / OCA</td>
+          <td>ซื้อแผ่น OCA มาทำเอง</td>
+          <td><b>ไม่ทำเอง</b> ซื้อฟิล์มสำเร็จที่ระบุ "กาวเต็มหน้า / full glue / OCA" การทำเองต้องใช้เครื่องสุญญากาศ อัตราสำเร็จใกล้ศูนย์</td>
+          <td>100% (แก้ด้วยการเลือกสินค้า)</td><td class="num">฿0</td>
+        </tr>
+        <tr>
+          <td class="strong">ไล่อากาศทิศทางเดียว / การเปียกแผ่</td>
+          <td>ลูกกลิ้ง / ไม้รีดอุตสาหกรรม</td>
+          <td>ไม้ปาดซิลิโคน หรือบัตรพลาสติกห่อผ้าไร้ขุย <b>ฝีมือสำคัญกว่าอุปกรณ์</b></td>
+          <td>90%</td><td class="num">฿90</td>
+        </tr>
+        <tr>
+          <td class="strong">แรงกดสม่ำเสมอ / แรงเค้นตกค้าง</td>
+          <td>เครื่องกดแรงคงที่</td>
+          <td>ควบคุมด้วยมือ: รีดทางเดียวจากกลาง ขอบเก็บทีหลัง <b>ห้ามกดขอบด้วยเล็บ</b></td>
+          <td>85%</td><td class="num">฿0</td>
+        </tr>
+        <tr>
+          <td class="strong">สภาพแวดล้อม 22–25 °C / ชื้นต่ำ</td>
+          <td>ห้องคลีนรูม ควบคุมอุณหภูมิและความชื้น</td>
+          <td>ห้องนอนเปิดแอร์ + ไฮโกรมิเตอร์ ฿150 + ปิดพัดลมปิดหน้าต่าง + รอ 20 นาทีให้ฝุ่นตก</td>
+          <td>90%</td><td class="num">฿150</td>
+        </tr>
+        <tr>
+          <td class="strong">(บทความไม่ได้พูดถึง) ขนาดที่ตรง</td>
+          <td>—</td>
+          <td><b>คาลิเปอร์ดิจิทัล</b> บทความถือว่ารู้ขนาดชิ้นงานอยู่แล้ว แต่ในโลกจริงนี่คือจุดพลาดบ่อยที่สุด</td>
+          <td>—</td><td class="num">฿300</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout amber" style="margin-top:22px">
+    <b>กรณีเดียวที่คุ้มจะอัปเกรดเป็นอุปกรณ์โปร:</b> ถ้าจะทำระยะยาว (เดือนละ 5 แผ่นขึ้นไป หรือรับติดให้เพื่อน) ปืนลมไอออนถึงจะคุ้ม สำหรับงานครั้งเดียว การซื้อมันเท่ากับเอา ฿2,000 ไปแลกกับลูกยางเป่าลมราคา ฿250 — ผลตอบแทนลดหลั่นชัดเจน
+  </div>
+</section>
+
+<!-- ===== 03 ===== -->
+<section id="budget">
+  <div class="sec-head"><span class="sec-num">03</span><h2>สามระดับงบประมาณ</h2></div>
+
+  <div class="grid g3">
+    <div class="card tier">
+      <span class="tag">แผน A · ประหยัด</span>
+      <div class="price">฿900–1,300</div>
+      <p class="small">ซื้อแค่ 7 รายการที่ทดแทนไม่ได้ ที่เหลือใช้ฝีมือชดเชย</p>
+      <ul>
+        <li>ฟิล์ม ×3 แผ่น (เผื่อพลาด 2 ครั้ง)</li>
+        <li>IPA 99% + ผ้าไร้ขุย + ไมโครไฟเบอร์</li>
+        <li>สติกเกอร์เก็บฝุ่น</li>
+        <li>ไม้ปาดซิลิโคน + เทปกาวกระดาษ</li>
+      </ul>
+      <p class="small" style="margin-top:14px">อัตราสำเร็จประมาณ <b>70%</b> เหมาะกับคนที่ติดครั้งเดียวและมือค่อนข้างนิ่ง</p>
+    </div>
+
+    <div class="card tier reco">
+      <div class="reco-flag">แนะนำ</div>
+      <span class="tag">แผน B · สมดุล</span>
+      <div class="price">฿2,100–2,900</div>
+      <p class="small">A + 4 อย่างที่ "เพิ่มความแน่นอน"</p>
+      <ul>
+        <li>คาลิเปอร์ดิจิทัล (วัดเส้นผ่านศูนย์กลาง)</li>
+        <li>ลูกยางเป่าลม (แทนปืนลมไอออน)</li>
+        <li>แว่นขยาย / ไฟส่องงาน LED</li>
+        <li>ไฮโกรมิเตอร์ + ถุงมือไนไตรล์</li>
+      </ul>
+      <p class="small" style="margin-top:14px">อัตราสำเร็จประมาณ <b>90%</b> <b>จุดคุ้มทุนอยู่ที่ระดับนี้</b> เงินที่เพิ่มไป ฿1,200 ซื้อ "การมองเห็นฝุ่น" และ "การวัดขนาดที่แม่น"</p>
+    </div>
+
+    <div class="card tier">
+      <span class="tag">แผน C · กึ่งมืออาชีพ</span>
+      <div class="price">฿4,000–5,600</div>
+      <p class="small">B + ระบบควบคุมไฟฟ้าสถิตและโต๊ะทำงาน</p>
+      <ul>
+        <li>ปืนลมไอออนขนาดกะทัดรัด</li>
+        <li>แปรงกันไฟฟ้าสถิต</li>
+        <li>ถาดงานสีเข้ม (หาฝุ่นด้วยแสงสะท้อน)</li>
+        <li>ฟิล์มสำรองเพิ่มเป็น 5 แผ่น</li>
+      </ul>
+      <p class="small" style="margin-top:14px">อัตราสำเร็จประมาณ <b>95%</b> คุ้มเฉพาะคนที่ทำบ่อยจริง ๆ</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <b>เลือกยังไง:</b> ถ้าติดนาฬิกาตัวเองเรือนเดียวและยอมติดซ้ำได้ → <b>A</b> · ถ้าอยากให้จบในครั้งเดียว และต่อไปจะติดมือถือ/กล้อง/นาฬิกาเรือนอื่นอีก → <b>B</b> · ถ้าจะรับงานหรือทำเดือนละหลายครั้ง → <b>C</b><br>
+    คำตอบที่ถูกสำหรับคนส่วนใหญ่คือ <b>B</b> เพราะสิ่งที่มันซื้อไม่ใช่ "เครื่องมือที่ดีกว่า" แต่เป็น<strong>ข้อมูลสองอย่างที่ชี้ขาด</strong> — ฝุ่นอยู่ตรงไหน (แว่นขยาย + แสงเฉียง) และขนาดเท่าไร (คาลิเปอร์)
+  </div>
+</section>
+
+<!-- ===== 04 ===== -->
+<section id="list">
+  <div class="sec-head"><span class="sec-num">04</span><h2>รายการจัดซื้อ (ติ๊กเลือกได้ · รวมเงินอัตโนมัติ)</h2></div>
+
+  <p>ติ๊กรายการที่คิดจะซื้อ ตัวเลขด้านล่างจะรวมให้ทันที ราคาเป็นช่วงที่พบได้บ่อยบน Shopee / Lazada / TikTok Shop / AliExpress ประเทศไทย ไม่ใช่ราคาต่ำสุดและไม่ใช่ราคาแบรนด์</p>
+
+  <div class="list-controls">
+    <button class="btn on" data-filter="all">ทั้งหมด</button>
+    <button class="btn" data-filter="must">เฉพาะจำเป็น</button>
+    <button class="btn" data-filter="reco">จำเป็น + แนะนำ</button>
+    <button class="btn" data-preset="A">ใช้แผน A</button>
+    <button class="btn" data-preset="B">ใช้แผน B</button>
+    <button class="btn" data-preset="C">ใช้แผน C</button>
+    <button class="btn" id="reset">ล้าง</button>
+  </div>
+
+  <div class="totalbar">
+    <div><span class="cnt" id="cnt">เลือกแล้ว 7 รายการ</span></div>
+    <div style="display:flex;align-items:baseline;gap:10px">
+      <span style="color:#b8b2a4">รวมประมาณ</span>
+      <span class="amt" id="sum">฿0</span>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table id="shop">
+      <thead>
+        <tr>
+          <th style="width:38px"></th>
+          <th style="width:28%">รายการ</th>
+          <th class="hide-sm">สเปก / เกณฑ์การเลือก</th>
+          <th style="width:100px">ระดับ</th>
+          <th style="width:104px">ราคา ฿</th>
+          <th class="hide-sm">คีย์เวิร์ดค้นหา</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-tier="must" data-price="525">
+          <td><input type="checkbox" class="check" checked></td>
+          <td class="strong">ฟิล์มกระจกนิรภัย ×3 แผ่น<span class="small" style="display:block">ฟิล์มกระจกนาฬิกา</span></td>
+          <td class="hide-sm">หนา 0.20–0.26 มม. · <b>กาวเต็มหน้า (full glue / OCA)</b> · ขอบ 2.5D · โปร่งแสง ≥91%</td>
+          <td><span class="pill p-must">จำเป็น</span></td>
+          <td class="num">300–750</td>
+          <td class="hide-sm">ฟิล์มกระจกนาฬิกา {ขนาด} mm</td>
+        </tr>
+        <tr data-tier="must" data-price="200">
+          <td><input type="checkbox" class="check" checked></td>
+          <td class="strong">น้ำยา IPA 99% · 500 ml<span class="small" style="display:block">น้ำยาไอโซโพรพิลแอลกอฮอล์ 99%</span></td>
+          <td class="hide-sm">ต้อง 99% ไม่ใช่ 70% (น้ำ 30% จะทิ้งคราบและแห้งช้า) ห้ามมีน้ำหอมหรือกลีเซอรีน</td>
+          <td><span class="pill p-must">จำเป็น</span></td>
+          <td class="num">150–250</td>
+          <td class="hide-sm">น้ำยา IPA 99%</td>
+        </tr>
+        <tr data-tier="must" data-price="185">
+          <td><input type="checkbox" class="check" checked></td>
+          <td class="strong">ผ้าเช็ดไร้ขุย · 100 แผ่น<span class="small" style="display:block">ผ้าเช็ดจอ ไร้ขุย</span></td>
+          <td class="hide-sm">ระดับ cleanroom ไม่หลุดเส้นใย กระดาษทิชชูใช้ไม่ได้เด็ดขาด</td>
+          <td><span class="pill p-must">จำเป็น</span></td>
+          <td class="num">120–250</td>
+          <td class="hide-sm">ผ้าเช็ดจอ ไร้ขุย</td>
+        </tr>
+        <tr data-tier="must" data-price="115">
+          <td><input type="checkbox" class="check" checked></td>
+          <td class="strong">ผ้าไมโครไฟเบอร์ · 3 ผืน<span class="small" style="display:block">ผ้าไมโครไฟเบอร์</span></td>
+          <td class="hide-sm">ใช้เช็ดแห้งรอบสองและห่อไม้ปาด สีเข้มช่วยให้เห็นฝุ่นง่ายกว่า</td>
+          <td><span class="pill p-must">จำเป็น</span></td>
+          <td class="num">80–150</td>
+          <td class="hide-sm">ผ้าไมโครไฟเบอร์ เช็ดจอ</td>
+        </tr>
+        <tr data-tier="must" data-price="65">
+          <td><input type="checkbox" class="check" checked></td>
+          <td class="strong">สติกเกอร์เก็บฝุ่น / เจลเก็บฝุ่น<span class="small" style="display:block">สติกเกอร์เก็บฝุ่น</span></td>
+          <td class="hide-sm">ใช้แตะเก็บเม็ดฝุ่นวินาทีสุดท้ายก่อนวางฟิล์ม ซื้อ 2 แพ็ก เพราะใช้เปลืองกว่าที่คิด</td>
+          <td><span class="pill p-must">จำเป็น</span></td>
+          <td class="num">40–90</td>
+          <td class="hide-sm">สติกเกอร์เก็บฝุ่น ฟิล์ม</td>
+        </tr>
+        <tr data-tier="must" data-price="85">
+          <td><input type="checkbox" class="check" checked></td>
+          <td class="strong">ไม้ปาดซิลิโคน<span class="small" style="display:block">ไม้ปาดฟิล์ม ซิลิโคน</span></td>
+          <td class="hide-sm">ขอบหุ้มซิลิโคน ความแข็งปานกลาง สำรองใช้บัตร ATM ห่อผ้าไร้ขุยได้</td>
+          <td><span class="pill p-must">จำเป็น</span></td>
+          <td class="num">50–120</td>
+          <td class="hide-sm">ไม้ปาดฟิล์ม ซิลิโคน</td>
+        </tr>
+        <tr data-tier="must" data-price="60">
+          <td><input type="checkbox" class="check" checked></td>
+          <td class="strong">เทปกาวกระดาษ<span class="small" style="display:block">เทปกาวกระดาษ</span></td>
+          <td class="hide-sm">ทำ "บานพับ" ช่วยจัดตำแหน่ง และปิดป้องตัวเรือน กาวอ่อนไม่ทิ้งคราบ</td>
+          <td><span class="pill p-must">จำเป็น</span></td>
+          <td class="num">40–80</td>
+          <td class="hide-sm">เทปกาวกระดาษ</td>
+        </tr>
+
+        <tr data-tier="reco" data-price="200">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">ถุงมือไนไตรล์ · 100 ใบ<span class="small" style="display:block">ถุงมือไนไตรล์</span></td>
+          <td class="hide-sm">กันลายนิ้วมือกลับไปเปื้อน ถุงมือลาเท็กซ์มีแป้ง ใช้ไม่ได้</td>
+          <td><span class="pill p-reco">แนะนำ</span></td>
+          <td class="num">150–250</td>
+          <td class="hide-sm">ถุงมือไนไตรล์</td>
+        </tr>
+        <tr data-tier="reco" data-price="300">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">คาลิเปอร์ดิจิทัล 150 mm<span class="small" style="display:block">คาลิเปอร์ดิจิทัล</span></td>
+          <td class="hide-sm"><b>รายการที่ถูกมองข้ามมากที่สุดในลิสต์นี้</b> วัดเส้นผ่านศูนย์กลางได้ละเอียด 0.1 มม.</td>
+          <td><span class="pill p-reco">แนะนำ</span></td>
+          <td class="num">200–400</td>
+          <td class="hide-sm">คาลิเปอร์ดิจิทัล 150mm</td>
+        </tr>
+        <tr data-tier="reco" data-price="250">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">ลูกยางเป่าลม<span class="small" style="display:block">ลูกยางเป่าลม กล้อง</span></td>
+          <td class="hide-sm">แบบที่ใช้กับกล้อง <b>ห้ามเป่าด้วยปาก</b> เพราะละอองน้ำลายจะติดกระจก</td>
+          <td><span class="pill p-reco">แนะนำ</span></td>
+          <td class="num">150–350</td>
+          <td class="hide-sm">ลูกยางเป่าลม กล้อง</td>
+        </tr>
+        <tr data-tier="reco" data-price="325">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">แว่นขยาย / ไฟส่องงาน LED<span class="small" style="display:block">แว่นขยายพร้อมไฟ LED</span></td>
+          <td class="hide-sm">กำลังขยาย 2–5 เท่าก็พอ หัวใจคือทำให้ฉาย<b>แสงเฉียง</b>ส่องฝุ่นได้</td>
+          <td><span class="pill p-reco">แนะนำ</span></td>
+          <td class="num">200–450</td>
+          <td class="hide-sm">แว่นขยาย ส่องงาน ไฟ LED</td>
+        </tr>
+        <tr data-tier="reco" data-price="175">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">ไฮโกรมิเตอร์ดิจิทัล<span class="small" style="display:block">ไฮโกรมิเตอร์ ดิจิทัล</span></td>
+          <td class="hide-sm">ยืนยัน 22–25 °C และ RH 45–60% ป้องกันกระจกเย็นแล้วเกิดหยดน้ำ</td>
+          <td><span class="pill p-reco">แนะนำ</span></td>
+          <td class="num">100–250</td>
+          <td class="hide-sm">ไฮโกรมิเตอร์ ดิจิทัล</td>
+        </tr>
+
+        <tr data-tier="up" data-price="115">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">แปรงกันไฟฟ้าสถิต<span class="small" style="display:block">แปรงกันไฟฟ้าสถิต</span></td>
+          <td class="hide-sm">ขนคาร์บอน/นำไฟฟ้า ปัดเบา ๆ ไม่ใช่ถู</td>
+          <td><span class="pill p-up">อัปเกรด</span></td>
+          <td class="num">80–150</td>
+          <td class="hide-sm">แปรงกันไฟฟ้าสถิต</td>
+        </tr>
+        <tr data-tier="up" data-price="75">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">ถาดงานสีเข้ม<span class="small" style="display:block">ถาดพลาสติก สีเข้ม</span></td>
+          <td class="hide-sm">พื้นหลังสีเข้ม + แสงเฉียง = เห็นฝุ่นชัด และรองรับฟิล์มที่หลุดมือ</td>
+          <td><span class="pill p-up">อัปเกรด</span></td>
+          <td class="num">50–100</td>
+          <td class="hide-sm">ถาดพลาสติก งานประดิษฐ์</td>
+        </tr>
+        <tr data-tier="up" data-price="2100">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">ปืนลมไอออน ขนาดกะทัดรัด<span class="small" style="display:block">ปืนลมไอออน</span></td>
+          <td class="hide-sm">คุ้มเฉพาะทำบ่อย ต้องต่อคอมเพรสเซอร์หรือเลือกรุ่นมีพัดลมในตัว</td>
+          <td><span class="pill p-up">อัปเกรด</span></td>
+          <td class="num">1,200–3,000</td>
+          <td class="hide-sm">ปืนลมไอออน ขจัดไฟฟ้าสถิต</td>
+        </tr>
+        <tr data-tier="no" data-price="225">
+          <td><input type="checkbox" class="check"></td>
+          <td class="strong">แผ่นกาว OCA<span class="small" style="display:block">แผ่นกาว OCA</span></td>
+          <td class="hide-sm"><b>ไม่แนะนำให้ทำเอง</b> ต้องใช้เครื่องสุญญากาศและไล่ฟอง อัตราสำเร็จต่ำมาก</td>
+          <td><span class="pill p-no">ไม่แนะนำ</span></td>
+          <td class="num">150–300</td>
+          <td class="hide-sm">แผ่นกาว OCA</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="small" style="margin-top:10px">ยอดรวมคิดจากค่ากลางของแต่ละช่วง ราคาจริงให้ยึดหน้าสั่งซื้อ · ราคาอ้างอิงตลาดออนไลน์ไทย ตุลาคม 2026 ช่วงโปรอาจถูกกว่าอีก 20–30% · ราคาฟิล์มคิดแบบแพ็ก 3 แผ่น</p>
+</section>
+
+<!-- ===== 05 ===== -->
+<section id="film">
+  <div class="sec-head"><span class="sec-num">05</span><h2>เลือกฟิล์มยังไง: ชี้ขาดกว่าอุปกรณ์</h2></div>
+
+  <p>หลักการข้อ 2 (จับคู่ดัชนีหักเห / ชั้นกาวไร้ฟอง) ในเงื่อนไขมือสมัครเล่น <strong>แก้ด้วยฝีมือไม่ได้ ต้องแก้ด้วยการเลือกสินค้า</strong> ฟิล์มราคา ฿150 เหมือนกันสองแผ่นให้ผลต่างกันได้เป็นสิบเท่า</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:20%">พารามิเตอร์</th><th style="width:32%">ควรเลือก</th><th>เหตุผล (อ้างอิงหลักการในบทความ)</th></tr></thead>
+      <tbody>
+        <tr><td class="strong">ชนิดกาว</td><td><b>กาวเต็มหน้า / full glue / OCA / ซิลิโคนเต็มหน้า</b><br><span class="small">หลีกเลี่ยง: edge glue, frame glue, กาวเฉพาะขอบ</span></td><td>ฟิล์มกาวขอบมีชั้นอากาศตรงกลางแน่นอน ทำให้เกิดการสะท้อนและนิวตันริง และรู้สึก "ลอย" เวลากด — นี่คือ air gap ที่บทความเตือนไว้ตรง ๆ</td></tr>
+        <tr><td class="strong">ความหนา</td><td>นาฬิกา: <b>0.20–0.26 มม.</b><br>ผิวเรียบทั่วไป: 0.26–0.33 มม.</td><td>หนาเกินจะชนตัวเรือน/ขอบเบเซิลและรับแรงที่ขอบ หนาเกินไปก็ลดความทนแรงกระแทก</td></tr>
+        <tr><td class="strong">ขอบฟิล์ม</td><td><b>2.5D หรือ 3D ขอบโค้ง</b></td><td>ขอบฉากเก็บฝุ่นง่ายและบิ่นง่าย ขอบโค้งช่วยกระจายแรงเค้นที่ขอบ (หลักการ 3)</td></tr>
+        <tr><td class="strong">ความโปร่งแสง</td><td><b>≥ 91%</b> มี AR coating ยิ่งดี</td><td>ฟิล์มเป็นตัวกลางเพิ่มอีกชั้น ถ้าโปร่งแสงไม่พอภาพจะหม่นลงชัดเจน</td></tr>
+        <tr><td class="strong">ขนาด</td><td>สั่งตาม<b>เส้นผ่านศูนย์กลางเป็นมิลลิเมตร</b> ปกติใช้ค่าที่วัดได้ −0.1 ถึง −0.2 มม.</td><td>เผื่อค่าเผื่อการติด ใหญ่เกินขอบลอยแน่นอน เล็กเกินจะเหลือช่องสะสมฝุ่น</td></tr>
+        <tr><td class="strong">รูปทรงกระจก</td><td>เรียบ → ฟิล์มแบน<br>โค้งเล็กน้อย → ฟิล์ม 2.5D<br><b>โค้งชัด / กระจกโดม → เปลี่ยนไปใช้ฟิล์ม TPU ไฮโดรเจล</b></td><td>ข้อที่ถูกมองข้ามบ่อยที่สุด: กระจกโค้งติดฟิล์มแบน ขอบจะลอยแน่นอน</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>แผนตัดสินใจ: ดูรูปทรงกระจกก่อน แล้วค่อยเลือกของ</h3>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card">
+      <span class="tag">ผิวเรียบ</span>
+      <h4>ฟิล์มกระจกนิรภัย (ตัวเลือกแรก)</h4>
+      <p>กันรอยขีดข่วนได้ดีที่สุด สัมผัสใกล้เคียงกระจกเดิม โปร่งแสงสูง ติดตาม SOP ปกติได้เลย</p>
+      <p class="small">ต้นทุน ฿90–250 / แผ่น</p>
+    </div>
+    <div class="card">
+      <span class="tag">โค้งเล็กน้อย</span>
+      <h4>ฟิล์มกระจกขอบ 2.5D</h4>
+      <p>ขอบถูกเจียรลบมุม ตามความโค้งเล็ก ๆ ได้ ตอนติดต้องรีดขอบเพิ่มอีก 2–3 รอบ</p>
+      <p class="small">ต้นทุน ฿150–300 / แผ่น</p>
+    </div>
+    <div class="card">
+      <span class="tag">โค้งชัด / กระจกโดม</span>
+      <h4>ฟิล์ม TPU ไฮโดรเจล</h4>
+      <p>ยืดตามผิวโค้งได้ ต้องติดแบบ "เปียก" (ฉีดน้ำสบู่) กันรอยได้น้อยกว่ากระจก แต่ไม่มีชั้นอากาศที่ขอบ</p>
+      <p class="small">ต้นทุน ฿80–200 / แผ่น</p>
+    </div>
+  </div>
+
+  <div class="callout warn" style="margin-top:22px">
+    <b>เรื่อง "9H":</b> นี่คือความแข็งดินสอ (pencil hardness) ไม่ใช่มาตราโมส์ มันบอกได้แค่ว่าทนรอยขีดเล็ก ๆ ในชีวิตประจำวัน <strong>ไม่ได้แปลว่าทนกระแทก</strong> คุณค่าจริงของฟิล์มบนกระจกมิเนอรัลคือการเป็น "ชั้น sacrificial" — ให้รอยไปเกิดที่ฟิล์มแทนกระจก คำโฆษณาเรื่อง "กันตก" ใช้ไม่ได้กับนาฬิกา เพราะแรงกระแทกเกิดที่ขอบ/ตัวเรือนแทบทั้งสิ้น
+  </div>
+
+  <div class="callout amber">
+    <b>ทำไมซื้อ 3 แผ่นไม่ใช่ 1 แผ่น:</b> ครั้งแรกอัตราสำเร็จราว 60–70% แผ่นที่สองขึ้นไป 90% ต้นทุนส่วนเพิ่มของแพ็ก 3 แผ่น (ราว ฿150) ต่ำกว่าค่ากระจกใหม่หรือค่าซ่อมมาก นี่คือรายจ่ายที่ผลตอบแทนสูงที่สุดในลิสต์ทั้งหมด
+  </div>
+</section>
+
+<!-- ===== 06 ===== -->
+<section id="sop">
+  <div class="sec-head"><span class="sec-num">06</span><h2>SOP 12 ขั้นตอน (ฉบับมือสมัครเล่น พร้อมเหตุผล)</h2></div>
+
+  <p>ทำตามลำดับ ห้ามข้ามขั้น คำอธิบายสีเขียวใต้แต่ละขั้นบอกว่ามันอ้างอิงหลักการข้อไหนของบทความ — เข้าใจหลักการแล้ว เวลาเกิดเหตุไม่คาดคิดคุณจะแก้เองได้</p>
+
+  <ol class="steps" style="margin-top:26px">
+    <li>
+      <h4>วัดขนาดและดูความโค้ง</h4>
+      <p>ใช้คาลิเปอร์วัดเส้นผ่านศูนย์กลางที่แนว 12–6 นาฬิกา และ 3–9 นาฬิกา เอาค่าเฉลี่ย จากนั้นเอาไม้บรรทัดวางตะแคงเทียบกับแหล่งแสงเพื่อดูเส้นสะท้อน: เส้นตรง = ผิวเรียบ, เส้นโค้ง = ผิวโค้ง</p>
+      <span class="why"><b>ทำไม:</b> ค่าเผื่อขนาดกำหนดว่าจะลอยหรือไม่ และความโค้งกำหนดว่าต้องซื้อฟิล์มกระจกหรือ TPU — บทความถือว่ารู้ขนาดชิ้นงานแล้ว ขั้นนี้จึงเป็นส่วนที่เราต้องเติมเอง</span>
+    </li>
+    <li>
+      <h4>จัดสภาพแวดล้อม</h4>
+      <p>เปิดแอร์ให้ได้ 22–25 °C ปิดหน้าต่าง ปิดพัดลม ปิดโหมดลมแรงของเครื่องฟอกอากาศ แล้วทิ้งไว้ 20 นาทีให้ฝุ่นที่ลอยอยู่ตกลงพื้น ใช้ไฮโกรมิเตอร์ยืนยัน RH 45–60%</p>
+      <span class="why"><b>หลักการ 4:</b> กระแสอากาศเป็นพาหะเดียวของฝุ่น และกระจกที่เย็นจะเกิดหยดน้ำ ซึ่งทำลายแรงยึดเริ่มต้นของกาว PSA โดยตรง</span>
+    </li>
+    <li>
+      <h4>เคลียร์โต๊ะ ปูถาดสีเข้ม ใส่ถุงมือ</h4>
+      <p>บนโต๊ะเหลือแค่ของที่จะใช้ในรอบนี้ ใส่ถุงมือไนไตรล์ เพราะนิ้วหลั่งซีบัมทุกวินาที</p>
+      <span class="why"><b>หลักการ 1:</b> ซีบัมเป็นสารปนเปื้อนพลังงานพื้นผิวต่ำ แค่กลับไปเปื้อนครั้งเดียว งานทำความสะอาดก่อนหน้าทั้งหมดก็เสียเปล่า</span>
+    </li>
+    <li>
+      <h4>ล้างไขมันรอบแรก</h4>
+      <p>หยด IPA 99% <b>ลงบนผ้าไร้ขุย</b> (ห้ามหยดลงกระจกตรง ๆ) เช็ดทิศทางเดียว ห้ามวนเป็นวงกลม แล้วเปลี่ยนผ้าสะอาดเช็ดแห้งอีกรอบเพื่อพาคราบออก</p>
+      <span class="why"><b>หลักการ 1:</b> เช็ดวนจะทำให้คราบมันถูกป้ายกลับไปทั่วผิว ส่วนการเช็ดทางเดียว + เช็ดแห้งคือการ "ขนย้าย" สิ่งปนเปื้อนออกไป ไม่ใช่ "เกลี่ยให้ทั่ว"</span>
+    </li>
+    <li>
+      <h4>ตรวจด้วยแสงเฉียง (ขั้นที่สำคัญที่สุด)</h4>
+      <p>วางไฟให้เกือบขนานกับผิวกระจก (grazing light) แล้วมองจากด้านข้าง มุมนี้ฝุ่นจะทอดเงายาว ทำให้เห็นเม็ดที่มองจากด้านหน้าไม่เห็น ถ้าเจอเม็ดฝุ่น → กลับไปข้อ 4</p>
+      <span class="why"><b>ประสบการณ์:</b> การส่องจากด้านหน้าเห็นฝุ่นได้แค่ราว 30% การตรวจด้วยแสงเฉียงคือช่องว่างที่ใหญ่ที่สุดระหว่างมือสมัครเล่นกับมืออาชีพ และมันฟรี</span>
+    </li>
+    <li>
+      <h4>เป่าลม + กำจัดไฟฟ้าสถิต</h4>
+      <p>ลูกยางเป่าลม ห่างจากผิว 3–5 ซม. ฉีดทำมุม 45° เพื่อ "ดัน" เม็ดฝุ่นออกไป ไม่ใช่ "เป่าให้กระเด็น" ถ้ามีแปรงกันไฟฟ้าสถิตให้ปัดเบา ๆ หนึ่งรอบ</p>
+      <span class="why"><b>หลักการ 1:</b> ผิวที่มีประจุจะดูดฝุ่นเข้าหาตัวเอง การเป่าลมยังช่วยลดประจุบนผิวได้บางส่วน</span>
+    </li>
+    <li>
+      <h4>ลองวางแห้ง + ทำบานพับ</h4>
+      <p>ยังไม่ลอกแผ่นรองหลัง วางฟิล์มลงไปจัดตำแหน่งก่อน ให้แน่ใจว่าไม่บังขีดบอกเวลาและไม่ชนขอบเบเซิล ใช้เทปกาวกระดาษ 2 แผ่นทำ "บานพับ" ยึดฟิล์มไว้ด้าน 12 นาฬิกา ให้เปิด-ปิดได้เหมือนหนังสือ</p>
+      <span class="why"><b>ประโยชน์:</b> แยก "การจัดตำแหน่ง" ออกจาก "การติด" ไม่ให้มือสั่นแล้วฟิล์มไปติดผิดที่</span>
+    </li>
+    <li>
+      <h4>ลอกแผ่นรองแค่ 1/3 แล้ววางจากด้านหนึ่ง</h4>
+      <p>ลอกด้าน 6 นาฬิกาขึ้นมา 1/3 ให้ฟิล์มหมุนลงรอบบานพับ ใช้ไม้ปาดดันจากด้านที่ติดแล้วไล่ไป พร้อมลอกแผ่นรองที่เหลือไปด้วย</p>
+      <span class="why"><b>หลักการ 2:</b> ปล่อยให้กาว "เปียกแผ่" จากด้านหนึ่ง อากาศจะถูกไล่ออกทางเดียว ถ้าลอกออกหมดแล้ววางทีเดียว แทบจะกักฟองอากาศไว้แน่นอน</span>
+    </li>
+    <li>
+      <h4>ห้ามกดกลางแผ่นก่อน</h4>
+      <p>ถ้าวางลงแล้วเห็นอากาศตรงกลาง <b>อย่าใช้นิ้วกดกลาง</b> เพราะจะกักอากาศให้แตกเป็นฟองเล็ก ๆ สองฟองที่กำจัดยากกว่าเดิม</p>
+      <span class="why"><b>หลักการ 2:</b> บทความระบุชัดว่าการกดกลางทันทีทำให้ "อากาศถูกกักไว้ใต้แรงดัน" วิธีที่ถูกคือไล่อากาศจากขอบที่ยังอิสระออกไป</span>
+    </li>
+    <li>
+      <h4>รีดทิศทางเดียว จากกลางออกขอบ</h4>
+      <p>ตั้งไม้ปาดทำมุม 30–45° กับผิว รีดจากกลางไปทางเดียว ให้ระยะทับกัน 1/3 ห้ามถูไปกลับ ทำสี่ทิศทาง เก็บขอบไว้ท้ายสุด</p>
+      <span class="why"><b>หลักการ 3:</b> ระยะทับกันทำให้แรงกดสม่ำเสมอ ส่วนการถูไปกลับจะพาอากาศกลับเข้าไปในบริเวณที่ไล่ออกแล้ว</span>
+    </li>
+    <li>
+      <h4>เก็บขอบ: กดเบา ๆ ห้ามกดเป็นจุด</h4>
+      <p>ใช้ปลายนิ้วที่ใส่ถุงมือหรือมุมโค้งของไม้ปาดที่ห่อผ้าไร้ขุย กดเป็นแนวต่อเนื่องรอบเส้นรอบวง <b>ห้ามใช้ปลายเล็บกดแรง ๆ ที่จุดใดจุดหนึ่ง</b></p>
+      <span class="why"><b>หลักการ 3:</b> กระจกมิเนอรัลแข็งโมส์ 6–7 และตัวฟิล์มมีแรงเค้นอยู่แล้ว การกดเป็นจุดที่ขอบทำให้เกิด stress concentration ซึ่งเป็นต้นเหตุหลักของการบิ่นและการแตกเอง</span>
+    </li>
+    <li>
+      <h4>ทิ้งไว้ 24 ชั่วโมง</h4>
+      <p>อย่าโดนน้ำ อย่าใส่นาฬิกา อย่าให้สายนาฬิกาถูขอบ ใน 24–72 ชั่วโมง ฟองเล็ก ๆ และแถบสีรุ้งที่ขอบมักหายไปเอง</p>
+      <span class="why"><b>หลักการ:</b> ชั้นกาวซิลิโคน/PSA ยังไหลแผ่ต่อในอุณหภูมิห้อง (wetting out ต่อเนื่อง) และแรงยึดเริ่มต้นจะขึ้นถึงค่าสูงสุดภายใน 24 ชั่วโมง</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ===== 07 ===== -->
+<section id="avoid">
+  <div class="sec-head"><span class="sec-num">07</span><h2>ของที่ไม่ต้องซื้อ และข้อห้าม</h2></div>
+
+  <h3>ไม่จำเป็นต้องซื้อ (เงินที่ประหยัดได้พอซื้อฟิล์ม 10 แผ่น)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:34%">รายการ</th><th style="width:14%">ราคา ฿</th><th>ทำไมไม่จำเป็น</th></tr></thead>
+      <tbody>
+        <tr><td class="strong">เครื่องอัลตราโซนิก</td><td class="num">800–2,500</td><td>ทำร้าย AR coating ด้านนอกและซีลกันน้ำของตัวเรือน การทำความสะอาดก่อนติดใช้ IPA ก็พอ</td></tr>
+        <tr><td class="strong">ตู้ปลอดฝุ่น / โต๊ะคลีนเบนช์</td><td class="num">1,500–5,000</td><td>ห้องที่ปิดหน้าต่างเปิดแอร์ + ทิ้งไว้ 20 นาที ให้ผลราว 80% ของมัน</td></tr>
+        <tr><td class="strong">เครื่องอัดสุญญากาศ / เครื่องไล่ฟอง</td><td class="num">3,000+</td><td>ใช้เฉพาะกรณีทำ OCA เอง ถ้าซื้อฟิล์มสำเร็จก็ไม่ต้องใช้เลย</td></tr>
+        <tr><td class="strong">โคมไฟ UV</td><td class="num">300–800</td><td>ฟิล์มกระจกใช้กาวซิลิโคนหรือ PSA ไม่ใช่ UV glue ส่องไปก็ไม่มีผล</td></tr>
+        <tr><td class="strong">น้ำยาเคลือบนาโน / สเปรย์เซรามิก</td><td class="num">200–600</td><td>ส่วนใหญ่เป็นฟลูออโรซิเลน ซึ่งเปลี่ยนพลังงานพื้นผิวและทำให้กาวยึดไม่ติด ขัดกับเป้าหมายการติดฟิล์มโดยตรง</td></tr>
+        <tr><td class="strong">แอลกอฮอล์ 70%</td><td class="num">60–120</td><td>น้ำ 30% ระเหยช้าและทิ้งคราบ ใช้ได้เฉพาะกรณีหาของ 99% ไม่ได้ และต้องเช็ดแห้งตาม</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>ข้อห้าม (ทำแล้วเสียหายแบบย้อนกลับไม่ได้)</h3>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card" style="border-color:#e6c9c0">
+      <h4 style="color:var(--red)">✕ ใช้ IPA กับกระจกอะคริลิก</h4>
+      <p>อะคริลิก (PMMA) เมื่อเจอแอลกอฮอล์จะเกิด stress cracking เป็นรอยแตกฝอยถาวร ต้องยืนยันก่อนว่ากระจกเป็นมิเนอรัลหรืออะคริลิก — อะคริลิกจะอุ่นมือกว่าและเคาะแล้วเสียงทึบ</p>
+    </div>
+    <div class="card" style="border-color:#e6c9c0">
+      <h4 style="color:var(--red)">✕ อะซิโตน / น้ำยาล้างเล็บ / ทินเนอร์</h4>
+      <p>ละลายสีพิมพ์บนขอบเบเซิล AR coating และสีตัวเรือน ไม่ควรใช้ในทุกกรณี</p>
+    </div>
+    <div class="card" style="border-color:#e6c9c0">
+      <h4 style="color:var(--red)">✕ เท IPA ลงบนตัวนาฬิกาโดยตรง</h4>
+      <p>ของเหลวจะซึมตามร่องเบเซิล พาจาระบีซีลออก ส่งผลต่อการกันน้ำ ให้ "หยดลงผ้า" เท่านั้น</p>
+    </div>
+    <div class="card" style="border-color:#e6c9c0">
+      <h4 style="color:var(--red)">✕ ใช้ทิชชู ชายเสื้อ ผ้าเช็ดแว่น</h4>
+      <p>เส้นใยไม้มีความแข็งกว่าสารเคลือบบนผิวกระจก จะทิ้งรอยขีดเล็ก ๆ และหลุดขุยหนัก</p>
+    </div>
+  </div>
+
+  <div class="callout warn" style="margin-top:22px">
+    <b>ความปลอดภัย:</b> IPA ติดไฟง่ายและไอระเหยมีฤทธิ์กดประสาท เปิดระบายอากาศตลอดเวลา ให้ห่างจากเปลวไฟ อย่าทำในครัวที่เปิดเตา ปิดฝาให้สนิทหลังใช้ และเลือกถุงมือไนไตรล์ ไม่ใช่ลาเท็กซ์ (แป้งจะเปื้อนกระจก)
+  </div>
+</section>
+
+<!-- ===== 08 ===== -->
+<section>
+  <div class="sec-head"><span class="sec-num">08</span><h2>สรุปสั้น ๆ</h2></div>
+  <div class="grid g2">
+    <div class="card">
+      <h4>คุณค่าของบทความต้นฉบับ</h4>
+      <p>มันยกระดับ "การติดฟิล์ม" จากเรื่องของฝีมือเป็นวิทยาศาสตร์ผิวรอยต่อที่อธิบายได้: <b>ควบคุมการปนเปื้อน → ทัศนศาสตร์รอยต่อ → การจัดการแรงเค้น → ควบคุมสภาพแวดล้อม</b> ทั้งสี่ข้อใช้ได้กับงานประกอบละเอียดทุกประเภท</p>
+    </div>
+    <div class="card">
+      <h4>ข้อจำกัดสำหรับมือสมัครเล่น</h4>
+      <p>มันสมมติว่าคุณมีปืนลมไอออน มี OCA และมีห้องควบคุมอุณหภูมิความชื้น ทำตามตรง ๆ จะเสีย ฿5,000 เพื่อเพิ่มอัตราสำเร็จแค่ 5% วิธีที่ถูกคือ<b>ย้ายงบจาก "เครื่องมือ" ไปที่ "วัสดุ + การเลือกสินค้า + ซื้อฟิล์มเผื่อ"</b></p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:20px">
+    <b>ชุดที่คุ้มที่สุด (ราว ฿2,000):</b> ฟิล์มกาวเต็มหน้า 3 แผ่น + IPA 99% + ผ้าไร้ขุย + สติกเกอร์เก็บฝุ่น + ไม้ปาดซิลิโคน + เทปกาวกระดาษ + คาลิเปอร์ + ลูกยางเป่าลม + แว่นขยาย + ไฮโกรมิเตอร์<br>
+    ชุดนี้ครอบคลุมส่วนที่ทำได้จริงของทั้งสี่หลักการ จุดเดียวที่ "ลดระดับ" คือการควบคุมไฟฟ้าสถิต (ใช้ลูกยางเป่าลมแทนปืนลมไอออน) และส่วนที่เสียไปนั้นชดเชยได้ด้วยการ<strong>ตรวจด้วยแสงเฉียง</strong> ซึ่งไม่มีค่าใช้จ่าย
+  </div>
+</section>
+
+<footer>
+  <div class="src">
+    <b>หมายเหตุ</b> · รายงานนี้เรียบเรียงจากโน้ตภาษาไทยที่ผู้ใช้ให้มา เรื่อง «การติดฟิล์มกระจก Tempered glass ลงบน Mineral glass» ซึ่งเสนอหลักการฟิสิกส์เคมีพื้นผิว 4 ข้อ ราคาเป็นค่าประมาณช่วงที่พบได้บ่อยบน e-commerce ไทย (Shopee TH / Lazada TH / TikTok Shop / AliExpress) ณ ตุลาคม 2026 และผันผวนตามโปรโมชัน โปรดยึดราคาหน้าสั่งซื้อจริง · ตัวเลขอัตราสำเร็จเป็นการประเมินจากความซับซ้อนของขั้นตอน ไม่ใช่ข้อมูลทดลอง
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  const rows = [...document.querySelectorAll('#shop tbody tr')];
+  const sumEl = document.getElementById('sum');
+  const cntEl = document.getElementById('cnt');
+  const fmt = n => '฿' + n.toLocaleString('en-US');
+
+  function update(){
+    let total = 0, count = 0;
+    rows.forEach(r=>{
+      const cb = r.querySelector('.check');
+      r.classList.toggle('picked', cb.checked);
+      if(cb.checked){ total += Number(r.dataset.price) || 0; count++; }
+    });
+    sumEl.textContent = fmt(total);
+    cntEl.textContent = 'เลือกแล้ว ' + count + ' รายการ';
+  }
+
+  rows.forEach(r=>r.querySelector('.check').addEventListener('change', update));
+
+  document.querySelectorAll('[data-filter]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('on'));
+      btn.classList.add('on');
+      const f = btn.dataset.filter;
+      rows.forEach(r=>{
+        const t = r.dataset.tier;
+        let show = true;
+        if(f === 'must') show = (t === 'must');
+        if(f === 'reco') show = (t === 'must' || t === 'reco');
+        r.style.display = show ? '' : 'none';
+      });
+      update();
+    });
+  });
+
+  const presets = { A:['must'], B:['must','reco'], C:['must','reco','up'] };
+  document.querySelectorAll('[data-preset]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const allow = presets[btn.dataset.preset];
+      rows.forEach(r=>{
+        r.style.display = '';
+        r.querySelector('.check').checked = allow.includes(r.dataset.tier);
+      });
+      document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('on'));
+      document.querySelector('[data-filter="all"]').classList.add('on');
+      update();
+    });
+  });
+
+  document.getElementById('reset').addEventListener('click',()=>{
+    rows.forEach(r=>{ r.querySelector('.check').checked = false; r.style.display=''; });
+    document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('on'));
+    document.querySelector('[data-filter="all"]').classList.add('on');
+    update();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
